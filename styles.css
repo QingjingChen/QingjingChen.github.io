@@ -1,0 +1,202 @@
+:root {
+  --bg: #f8f4ea;
+  --bg-soft: #efe5d1;
+  --ink: #1f2621;
+  --accent: #127a67;
+  --accent-soft: #d6efe9;
+  --warm: #a65a2a;
+  --line: #dbcaa8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% -10%, #fff8e8 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, #e5f5ef 0%, transparent 35%),
+    var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: radial-gradient(#1f26210f 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+.hero {
+  position: relative;
+  padding: 2rem 6vw 5rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-color: var(--accent);
+}
+
+.hero-content {
+  max-width: 860px;
+  animation: rise 0.8s ease both;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: var(--warm);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  margin: 0.6rem 0 1rem;
+}
+
+.lead {
+  max-width: 700px;
+  font-size: 1.15rem;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  transition: transform 0.22s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+.section {
+  padding: 2rem 6vw;
+  max-width: 1050px;
+  animation: rise 0.8s ease both;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+}
+
+.about p {
+  max-width: 760px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  grid-column: span 4;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, #fff 0%, var(--bg-soft) 100%);
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #8e6c3b1d;
+}
+
+.contact a {
+  color: var(--accent);
+}
+
+footer {
+  padding: 2.4rem 6vw 3rem;
+  color: #4b534d;
+  font-size: 0.95rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 940px) {
+  .card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 1.3rem;
+  }
+
+  .top-nav {
+    margin-bottom: 2.8rem;
+  }
+
+  .card {
+    grid-column: 1 / -1;
+  }
+
+  .lead {
+    font-size: 1.03rem;
+  }
+}
