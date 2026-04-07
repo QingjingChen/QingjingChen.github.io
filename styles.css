@@ -245,8 +245,8 @@ h1 {
 
 /* Profile links */
 .profile-links {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
@@ -254,7 +254,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.2rem;
   border: 1px solid var(--line);
   background: linear-gradient(160deg, #fff 0%, var(--bg-soft) 100%);
   border-radius: 16px;
@@ -285,6 +285,80 @@ h1 {
 .profile-name {
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+/* Publications */
+.pub-note {
+  font-size: 0.9rem;
+  color: #4b534d;
+  margin-bottom: 1.5rem;
+}
+
+.pub-note a {
+  color: var(--accent);
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.pub-item {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, #fff 0%, var(--bg-soft) 100%);
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pub-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #8e6c3b1d;
+}
+
+.pub-year {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 28px;
+  padding: 0.2rem 0.6rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.pub-body {
+  flex: 1;
+}
+
+.pub-body h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.pub-authors {
+  margin: 0 0 0.4rem;
+  font-size: 0.88rem;
+  color: #4b534d;
+  line-height: 1.5;
+}
+
+.pub-venue {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  background: var(--blue-soft);
+  color: var(--blue);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
 }
 
 /* Contact */
@@ -364,6 +438,10 @@ footer {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+
+  .profile-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
@@ -403,6 +481,15 @@ footer {
   }
 
   .profile-links {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-item {
     flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pub-year {
+    align-self: flex-start;
   }
 }
