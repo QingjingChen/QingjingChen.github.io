@@ -192,6 +192,11 @@ a:hover {
   font-weight: 600;
 }
 
+.pub-list li a {
+  font-size: 0.85rem;
+  margin-left: 0.15rem;
+}
+
 .see-more {
   font-size: 0.88rem;
   color: #666;
